@@ -4,12 +4,12 @@
 # ---------------------------------------------------------------
 
 # Site
-title: NexT
-subtitle:
-description:
-author: John Doe
+title: XJoshua's Blog
+subtitle: 
+description: For those fleeting ideas and time.
+author: Xiong Yishun
 # Support language: de, en, fr-FR, id, ja, ko, pt-BR, pt, ru, zh-Hans, zh-hk, zh-tw
-language: en
+language: zh-Hans
 date_format: '%Y-%m-%d'
 
 # URL
@@ -17,6 +17,8 @@ date_format: '%Y-%m-%d'
 url:
 baseurl:
 permalink: pretty
+
+repository: xjoshua/xjoshua.github.io
 
 # Pagination
 paginate: 10
@@ -75,10 +77,11 @@ plugins:
 # ---------------------------------------------------------------
 
 # Put your favicon.ico into `assets/` directory.
-favicon: /assets/favicon.ico
+favicon: 
+# /assets/favicon.ico
 
 # Set default keywords (Use a comma to separate)
-keywords: "Jekyll, NexT"
+keywords: "ideas, Games"
 
 # Set rss to false to disable feed link.
 # Leave rss as empty to use site's feed link.
@@ -86,10 +89,10 @@ keywords: "Jekyll, NexT"
 rss:
 
 # Specify the date when the site was setup
-#since: 2015
+since: 2017
 
 # icon between year and author @Footer
-authoricon: heart
+authoricon: rocket
 
 # Footer `powered-by` and `theme-info` copyright
 copyright: true
@@ -118,9 +121,10 @@ index_with_subtitle: false
 menu:
   home: /
   #categories: /categories/
-  #about: /about/
+  about: /about/
   archives: /archives/
   tags: /tags/
+  search: search/
   #sitemap: /sitemap.xml
   #commonweal: /404.html
 
@@ -138,6 +142,7 @@ menu_icons:
   categories: th
   schedule: calendar
   tags: tags
+  search: search
   archives: archive
   sitemap: sitemap
   commonweal: heartbeat
@@ -193,7 +198,7 @@ font:
   logo:
     external: true
     family:
-    size:
+    size: 24
 
   # Font settings for <code> and code blocks.
   codes:
