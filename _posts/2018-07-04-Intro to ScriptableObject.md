@@ -31,7 +31,7 @@ tags:
 ![asset实例文件](asset实例文件.png)
 
 下面就是使用ScriptableObject的代码：
-```
+```csharp
 	/// <summary>
 	/// ScriptableObject类
 	/// </summary>
