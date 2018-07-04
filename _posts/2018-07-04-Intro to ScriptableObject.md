@@ -7,7 +7,6 @@ tags: null
 published: true
 ---
 
-## Intro to Scriptable Object
 
 在做本地化的时候需要在Editor模式下测试不同的语言，现在项目中的本地化控制是通过读取系统语言（游戏体量小，并没有在设置中设置语言的选项），在游戏中通过Editor编辑器扩展直接修改也比较简单，但是每次都需要设置一下，有点麻烦。所以想起了Unity官方曾经推荐过的ScriptableObject：
 
