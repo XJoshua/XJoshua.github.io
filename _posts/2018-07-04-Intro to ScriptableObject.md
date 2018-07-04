@@ -22,6 +22,7 @@ tags:
 像我这个本地化的例子，把文件放到Editor文件夹中也不会影响到游戏打包。完美。
 
 不过实际用起来还是和MonoBehavior有一点区别。通常MonoBehavior脚本可以直接在GameObject的Inspector脚本组件界面中修改，而ScriptableObject是在脚本生成的.asset实例文件上修改。
+
 .asset实例文件
 ![asset实例文件](asset实例文件.png)
 
@@ -70,6 +71,8 @@ public class EditorHelper
 
 注意，和Monobehavior类似，ScriptableObject也有生命周期方法，不过只有四个：
 
+函数名 | 功能
+-------|--------------
 Awake |	This function is called when the ScriptableObject script is started.
 OnDestroy |	This function is called when the scriptable object will be destroyed.
 OnDisable |	This function is called when the scriptable object goes out of scope.
@@ -81,5 +84,6 @@ OnEnable | This function is called when the object is loaded.
 
 还有ScriptableObject类最好是单独写在一个文件中，文件名和类名相同，不然会常常出现下面的报错（毕竟和MonoBehavior有些关系）。
 PS：这个问题还挺奇怪的，我试了很多次，即使创建一个相同类名的文件，即使文件是空的（记得删掉里面的MonoBehavior类），也不会出现这个Missing错误。
+
 ![missing_warning](missing_warning.png)
 
