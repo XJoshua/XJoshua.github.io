@@ -1,3 +1,6 @@
+---
+published: false
+---
 
 ---
 title: Intro to Scriptable Object
@@ -69,15 +72,14 @@ tags:
 
 注意，和Monobehavior类似，ScriptableObject也有生命周期方法，不过只有四个：
 
-Awake	This function is called when the ScriptableObject script is started.
-OnDestroy	This function is called when the scriptable object will be destroyed.
-OnDisable	This function is called when the scriptable object goes out of scope.
-OnEnable	This function is called when the object is loaded.
+Awake |	This function is called when the ScriptableObject script is started.
+OnDestroy |	This function is called when the scriptable object will be destroyed.
+OnDisable |	This function is called when the scriptable object goes out of scope.
+OnEnable | This function is called when the object is loaded.
 
 同样，因为和MonoBehaviour有些不同（或者相同），这里的几个方法的调用时机会有一些概念上的问题。MonoBehaviour的Awake是在脚本（组件）创建的时候调用的，同样ScriptableObject的Awake也是在脚本实例创建出来的时候调用的。（一开始的时候我还以为是在类声明的时候调用的。。。ORZ）其他的几个回调函数也类似。
 
 还有ScriptableObject类最好是单独写在一个文件中，文件名和类名相同，不然会常常出现下面的报错（毕竟和MonoBehavior有些关系）。
 PS：这个问题还挺奇怪的，我试了很多次，即使创建一个相同类名的文件，即使文件是空的（记得删掉里面的MonoBehavior类），也不会出现这个Missing错误。
-missing_warning
 ![missing_warning](missing_warning.png)
 
