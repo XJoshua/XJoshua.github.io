@@ -2,16 +2,14 @@
 published: false
 ---
 
-## A New Post
-
-Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the toolbar above, or click the **?** button for formatting help.
-
 ## Intro to Scriptable Object
 #### ScriptObject介绍
 
 在做本地化的时候需要在Editor模式下测试不同的语言，现在项目中的本地化控制是通过读取系统语言（游戏体量小，并没有在设置中设置语言的选项），在游戏中通过Editor编辑器扩展直接修改也比较简单，但是每次都需要设置一下，有点麻烦。所以想起了Unity官方曾经推荐过的ScriptableObject：
 
 >A class you can derive from if you want to create objects that don't need to be attached to game objects. This is most useful for assets which are only meant to store data.如果你想创建不需要附着在游戏物体上的项目，你可以使用这个类。常常用来构造只为存储数据的资产。
+
+> We loved with a love that was more than love
 
 概括一下，有下面几个优点：
 -不需要附加到GameObject上
@@ -75,6 +73,3 @@ OnEnable	This function is called when the object is loaded.
 
 还有ScriptableObject类最好是单独写在一个文件中，文件名和类名相同，不然会常常出现下面的报错（毕竟和MonoBehavior有些关系）。
 PS：这个问题还挺奇怪的，我试了很多次，即使创建一个相同类名的文件，即使文件是空的（记得删掉里面的MonoBehavior类），也不会出现这个Missing错误。
-![missing warning]({{site.baseurl}}/_posts/missing warning.png)
-
-
