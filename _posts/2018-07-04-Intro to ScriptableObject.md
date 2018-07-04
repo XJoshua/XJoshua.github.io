@@ -13,8 +13,6 @@ Enter text in [Markdown](http://daringfireball.net/projects/markdown/). Use the 
 
 >A class you can derive from if you want to create objects that don't need to be attached to game objects. This is most useful for assets which are only meant to store data.如果你想创建不需要附着在游戏物体上的项目，你可以使用这个类。常常用来构造只为存储数据的资产。
 
-> We loved with a love that was more than love
-
 概括一下，有下面几个优点：
 -不需要附加到GameObject上
 -可以轻松序列化存储数据
@@ -77,3 +75,6 @@ OnEnable	This function is called when the object is loaded.
 
 还有ScriptableObject类最好是单独写在一个文件中，文件名和类名相同，不然会常常出现下面的报错（毕竟和MonoBehavior有些关系）。
 PS：这个问题还挺奇怪的，我试了很多次，即使创建一个相同类名的文件，即使文件是空的（记得删掉里面的MonoBehavior类），也不会出现这个Missing错误。
+![missing warning]({{site.baseurl}}/_posts/missing warning.png)
+
+
