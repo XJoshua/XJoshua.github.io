@@ -86,7 +86,7 @@ OnEnable | This function is called when the object is loaded.
 
 还有ScriptableObject类最好是单独写在一个文件中，文件名和类名相同，不然会常常出现下面的报错（毕竟和MonoBehavior有些关系）。
 
-*PS：这个问题还挺奇怪的，我试了很多次，即使创建一个相同类名的文件，即使文件是空的（记得删掉里面的MonoBehavior类），也不会出现这个Missing错误。*
+*<font color="red">PS：这个问题还挺奇怪的，我试了很多次，即使创建一个相同类名的文件，即使文件是空的（记得删掉里面的MonoBehavior类），也不会出现这个Missing错误。</font>*
 
 ![missing_warning](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/_posts/missing_warning.png)
 
