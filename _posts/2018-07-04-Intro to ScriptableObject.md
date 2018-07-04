@@ -1,3 +1,4 @@
+
 ---
 title: Intro to Scriptable Object
 description: A simple tutorial for using ScritableObject in Unity.
@@ -24,7 +25,7 @@ tags:
 
 不过实际用起来还是和MonoBehavior有一点区别。通常MonoBehavior脚本可以直接在GameObject的Inspector脚本组件界面中修改，而ScriptableObject是在脚本生成的.asset实例文件上修改。
 .asset实例文件
-![asset实例文件]({{site.baseurl}}/_posts/asset实例文件.png)
+![asset实例文件](asset实例文件.png)
 
 下面就是使用ScriptableObject的代码：
 ```
@@ -78,5 +79,5 @@ OnEnable	This function is called when the object is loaded.
 还有ScriptableObject类最好是单独写在一个文件中，文件名和类名相同，不然会常常出现下面的报错（毕竟和MonoBehavior有些关系）。
 PS：这个问题还挺奇怪的，我试了很多次，即使创建一个相同类名的文件，即使文件是空的（记得删掉里面的MonoBehavior类），也不会出现这个Missing错误。
 missing_warning
-![missing_warning]({{site.baseurl}}/_posts/missing warning.png)
+![missing_warning](missing_warning.png)
 
