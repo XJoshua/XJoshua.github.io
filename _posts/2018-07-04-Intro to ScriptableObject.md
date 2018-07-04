@@ -77,7 +77,7 @@ OnDestroy | This function is called when the scriptable object will be destroyed
 OnDisable | This function is called when the scriptable object goes out of scope.
 OnEnable | This function is called when the object is loaded.
 
-同样，因为和MonoBehaviour有些不同（或者相同），这里的几个方法的调用时机会有一些概念上的问题。MonoBehaviour的Awake是在脚本（组件）创建的时候调用的，同样ScriptableObject的Awake也是在脚本实例创建出来的时候调用的。（一开始的时候我还以为是在类声明的时候调用的。。。ORZ）
+同样，因为和MonoBehaviour有些不同（或者相同），这里的几个方法的调用时机会有一些概念上的问题。MonoBehaviour的Awake是在脚本（组件）创建的时候调用的，同样ScriptableObject的Awake也是在脚本实例创建出来的时候调用的。（一开始的时候我还以为是在类声明的时候调用的。。。ORZ，虽然看上去有点理应如此的感觉，不过在查这个问题的时候网上也有很多人抱怨过这个问题，为我的愚蠢开个脱，哈哈。）
 
 其他的几个回调函数也类似。
 
@@ -89,3 +89,6 @@ OnEnable | This function is called when the object is loaded.
 
 ![missing_warning](missing_warning.png)
 
+好的，ScriptableObject的简单使用介绍就到这里，更深入的使用可能还要等我在生产环境实验之后再做打算。
+
+如果文中有错误或者遗漏，欢迎联系指正。
