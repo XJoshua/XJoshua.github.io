@@ -1,5 +1,5 @@
 ---
-title: Shader102:Stream Lighting Effect
+title: Shader102:Stream Lighting Effect-流光效果
 description: 一个简单的流光Shader，用在2D图片上。
 categories:
   - Unity
@@ -8,7 +8,7 @@ tags: null
 published: true
 ---
 
-## Shader102: Stream Lighting Effect
+## Shader102: 流光效果
 
 有空的时候会学着写一些Shader，正好有个朋友问到Logo的流光，就想试着写了一个。一开始的时候立即想到用数学方法写，写了一半发现效果一直调不好。。。只好上网找找资料，结果发现大部分都是用另外做的一张流光图叠加达到效果，嗯。。。虽然有点偷懒，不过确实简单很多。所以就开心的放弃了写了一半的数学方法，就地25.
 
