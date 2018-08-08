@@ -1,6 +1,6 @@
 # Site settings
 title: XJoshua's Blog
-SEOTitle: 秘境建造工地 | Abyss Maker
+SEOTitle: 秘境工坊 | Abyss Maker
 header-img: img/home-bg.jpg
 email: xysjoshua@hotmail.com
 description: "For those fleeting ideas and time."
@@ -69,8 +69,8 @@ ga_domain:
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "秘境建筑师，大干快上，管挖不管填。\n \" - 维纳斯的美在于未完成的双臂\" \n \" - 别人是做好了砸掉的\" \n \" - 住口！\""
-sidebar-avatar: /img/avatar-cat-lover.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: "秘境建筑师，大干快上，管挖不管填。<br /> \" - 维纳斯的美在于未完成的双臂 \" <br /> \" - 别人是做好了砸掉的 \" <br /> \" - 住口！\""
+sidebar-avatar: /img/avatar-xjoshua.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 # Featured Tags
