@@ -5,8 +5,7 @@ subtitle:   "简易ScriptableObject使用入门"
 date:       2018-07-04 21:00:00
 author:     "Xjoshua"
 header-img: "img/post-bg-default.jpg"
-categories:
-  - Tuturial
+catalog: 	true
 tags:
   - Unity
   - Tuturial
@@ -30,9 +29,9 @@ tags:
 
 不过实际用起来还是和MonoBehavior有一点区别。通常MonoBehavior脚本可以直接在GameObject的Inspector脚本组件界面中修改，而ScriptableObject是在脚本生成的.asset实例文件上修改。
 
-![asset实例文件](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/_posts/Image/2018-07-04-asset实例文件.png)
+![asset实例文件](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1807/2018-07-04-asset实例文件.png)
 
-#### 使用实例
+## 使用实例
 
 下面就是使用ScriptableObject的代码：
 ```csharp
@@ -94,7 +93,7 @@ OnEnable | This function is called when the object is loaded.
 
 <font color=red>PS：这个问题还挺奇怪的，我试了很多次，即使创建一个相同类名的文件，即使文件是空的（记得删掉里面的MonoBehavior类），也不会出现这个Missing错误。</font>
 
-![missing_warning](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/_posts/Image/2018-07-04-missing_warning.png)
+![missing_warning](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1807/2018-07-04-missing_warning.png)
 
 好的，ScriptableObject的简单使用介绍就到这里，更深入的使用可能还要等我在生产环境实验之后再做打算。
 

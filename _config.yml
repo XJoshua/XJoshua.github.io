@@ -30,8 +30,8 @@ anchorjs: true                          # if you want to customize anchor. check
 
 # Gems
 # from PR#40, to support local preview for Jekyll 3.0
-gems: [jekyll-paginate]
-
+#gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 
 # Markdown settings
 # replace redcarpet to kramdown,
@@ -40,14 +40,14 @@ gems: [jekyll-paginate]
 markdown: kramdown
 kramdown:
   input: GFM                            # use Github Flavored Markdown !important
-  syntax_highlighter: rouge
-  syntax_highlighter_opts:
-    default_lang: csharp
-    css_class: 'highlight'
-    span:
-      line_numbers: false
-    block:
-      line_numbers: true
+ # syntax_highlighter: rouge
+#  syntax_highlighter_opts:
+ #   default_lang: csharp
+ #   css_class: 'highlight'
+ #   span:
+  #    line_numbers: false
+  #  block:
+   #   line_numbers: true
 
 
 # Disqus settings
@@ -64,7 +64,7 @@ disqus_username: xjoshua
 ba_track_id: 
 # Google Analytics
 ga_track_id: UA-123580349-1            # Format: UA-xxxxxx-xx
-ga_domain: 
+ga_domain: https://xjoshua.github.io/
 
 
 # Sidebar settings
