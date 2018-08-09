@@ -1,12 +1,16 @@
 ---
-title: Shader102:Stream Lighting Effect-流光效果
-description: 一个简单的流光Shader，用在2D图片上。
-categories:
+layout:     post
+title:      "Shader102: Stream Lighting Effect"
+subtitle:   "流光效果"
+date:       2018-05-22 20:00:00
+author:     "Xjoshua"
+header-img: "img/post-bg-default.jpg"
+catalog: 	true
+tags:
   - Unity
   - Shader
-tags: null
-published: true
 ---
+
 
 ## Shader102: 流光效果
 
