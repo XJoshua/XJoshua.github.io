@@ -17,7 +17,7 @@ tags:
 有空的时候会学着写一些Shader，正好有个朋友问到Logo的流光，就想试着写了一个。一开始的时候立即想到用数学方法写，写了一半发现效果一直调不好。。。只好上网找找资料，结果发现大部分都是用另外做的一张流光图叠加达到效果，嗯。。。虽然有点偷懒，不过确实简单很多。所以就开心的放弃了写了一半的数学方法，就地25.
 
 首先你要有一张流光图。这个简单，用PS处理一下就好。
-![流光图](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/_posts/Image/2018-07-13-StreamLight.png)
+![流光图](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1807/2018-07-13-StreamLight.png)
 
 #### Shader Code
 
@@ -119,7 +119,7 @@ Shader "UI/FlashLight"
 
 #### 效果
 
-![Stream Light Effect](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/_posts/Image/2018-07-13-StreamLightEffect.gif)
+![Stream Light Effect](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1807/2018-07-13-StreamLightEffect.gif)
 
 新学了一个 `fmod` 函数，很有趣。有点类似于「取余」运算，不过可以用浮点数来做(看函数名就是浮点数模运算)，用这个函数可以省很多事。
 
