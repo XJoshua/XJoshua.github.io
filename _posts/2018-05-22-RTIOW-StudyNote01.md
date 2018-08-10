@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "Ray Tracing in One Weekend - Study Note 01"
-subtitle:   "周末掌握光线追踪 - 学习笔记一"
+subtitle:   "周末掌握光线追踪 - 学习笔记一：图像和向量类"
 date:       2018-05-22 20:00:00
 author:     "Xjoshua"
 header-img: "img/post-bg-default.jpg"
@@ -99,7 +99,7 @@ int main()
 几乎所有的图形程序都会使用一些类来存储几何向量和颜色。在许多系统中这些向量是4D的（几何的3D加上齐次坐标，颜色的话RGB的加上透明通道）。对于我们来说，3个坐标就够了，所以我们用vec3来存储颜色，位置，方向，偏移等几乎所有的东西。也许有些人不喜欢这样，因为这不会阻止你做一些蠢事，像在位置坐标加上颜色。这很有道理，但我们这里采取“最少代码”原则，只要不是错的太离谱。
 
 下面是vec3类的第一部分：   
-```Cpp 
+```Cpp
 #ifndef VEC3H
 #define VEC3H
  
@@ -242,28 +242,21 @@ Vec3类的文件要放在哪个文件里，也是一个问题，
 
 -| 非模板类型(none-template) |	模板类型(template)
 -|--------------|--------------
-头文件(.h) |	全局变量申明（带extern限定符）|	带inline限定符的全局模板函数的申明和定义
--|	全局函数的申明   
--|  带inline限定符的全局函数的定义
--|	类的定义	模板类的定义
--|	类函数成员和数据成员的申明（在类内部）|	模板类成员的申明和定义（定义可以放在类内或者类外，类外不需要写inline）
--|	类定义内的函数定义（相当于inline）
--|	带static const限定符的数据成员在类内部的初始化
--|	带inline限定符的类定义外的函数定义
-实现文件(.cpp) |	全局变量的定义（及初始化）|	(无)
--|	全局函数的定义
--|	类函数成员的定义	
--|	类带static限定符的数据成员的初始化
+头文件(.h) |	全局变量申明（带`extern`限定符）<br>全局函数的申明<br>带inline限定符的全局函数的定义|	带`inline`限定符的全局模板函数的申明和定义
+-|	类的定义<br>类函数成员和数据成员的申明（在类内部）<br>类定义内的函数定义（相当于`inline`）<br>带`static` `const`限定符的数据成员在类内部的初始化<br> 带`inline`限定符的类定义外的函数定义|	模板类的定义<br>模板类成员的申明和定义（定义可以放在类内或者类外，类外不需要写`inline`）
+实现文件(.cpp) |	全局变量的定义（及初始化）<br>全局函数的定义|	(无)
+-|	类函数成员的定义<br>类带`static`限定符的数据成员的初始化
 
+未完待续。
 
 #### 其他笔记
-1. [读书笔记二：光线和球体](https://xjoshua.github.io/2018/05/22/SimpleMaze-0x01/) 
-2. [读书笔记三：施工中](https://xjoshua.github.io/2018/05/22/SimpleMaze-0x01/)
-3. [读书笔记四：施工中](https://xjoshua.github.io/2018/05/22/SimpleMaze-0x01/)
-4. [读书笔记五：施工中](https://xjoshua.github.io/2018/05/22/SimpleMaze-0x01/)
+1. [读书笔记二：光线和球体](https://xjoshua.github.io/2018/05/24/RTIOW-StudyNote02/)
+2. [读书笔记三：法线，多物体和抗锯齿](https://xjoshua.github.io/2018/05/26/RTIOW-StudyNote03/)
+3. [读书笔记四：漫反射和金属](https://xjoshua.github.io/2018/05/28/RTIOW-StudyNote04/)
+4. [读书笔记五：施工中](https://xjoshua.github.io/2018/05/30/RTIOW-StudyNote05/)
 
 ##### 参考资料：
 
-> 1. ["In One Weekend：作者博客"](http://in1weekend.blogspot.com/) 
+> 1. ["In One Weekend：原书博客"](http://in1weekend.blogspot.com/) 
 > 2. ["作者发布在GoogleDrive上的PDF，请尽量在Amazon购买支持"](https://drive.google.com/drive/folders/14yayBb9XiL16lmuhbYhhvea8mKUUK77W) 
 > 3. ["总结《Ray Tracing in One Weekend》 by 图形跟班"](https://blog.csdn.net/libing_zeng/article/details/72598060?locationNum=7&fps=1)
