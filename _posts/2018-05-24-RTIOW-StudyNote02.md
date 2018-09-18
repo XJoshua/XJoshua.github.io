@@ -19,26 +19,26 @@ tags:
 
 所有光线追踪器都应该有的是`ray`类，可以计算出沿着这个光线上可以看到的颜色。让我们把光线视为一个函数：`p(t) = A + t * B`
 
-p是3D空间下的一条直线上的点，A是线的起点，B是光线的方向。t则是实际的参数（代码中式`float`类型）。插入不同的t，p(t)会在光线上移动。加入负数的话，可以得到3D直线的任意位置（反方向的延长线上）。正数的t则是在A点的前方，这被称作 half-line（半光线）或者光线。
+p是3D空间下的一条直线上的点，A是线的起点，B是光线的方向。`t`则是实际的参数（代码中是`float`类型）。插入不同的`t`，`p(t)`会在光线上移动。加入负数的话，可以得到3D直线的任意位置（反方向的延长线上）。正数的`t`则是在A点的前方，这被称作 `half-line（半光线）`或者`光线`。
 
 下面是`ray`类的代码：
 ```Cpp
-	#ifndef RAYH
-	#define RAYH
-	#include "vec3.h"
-	 
-	class ray
-	{
-	public:
-		ray(){}
-		ray(const vec3& a, const vec3& b) { A = a; B = b; }
-		vec3 origin() const { return A; }
-		vec3 direction() const { return B; }
-		vec3 point_at_parameter(float t) const { return A + t*B; }
-	 
-		vec3 A;
-		vec3 B;
-	};
+#ifndef RAYH
+#define RAYH
+#include "vec3.h"
+ 
+class ray
+{
+public:
+    ray(){}
+    ray(const vec3& a, const vec3& b) { A = a; B = b; }
+    vec3 origin() const { return A; }
+    vec3 direction() const { return B; }
+    vec3 point_at_parameter(float t) const { return A + t*B; }
+
+    vec3 A;
+    vec3 B;
+};
 ```
 
 现在我们准备来写光线追踪器。光追器的核心就是发射光线穿过像素点，计算这些方向的光线上的颜色。另一种形式是计算从眼睛到像素的光线，计算相交的光线，和相交点的颜色。（没懂这说的啥）当第一次开发一个光追器，我常常做个简单的摄像机来把代码跑起来。我也会做一个简单的color函数来得到背景的颜色。
@@ -97,7 +97,7 @@ int main()
 }
 ```
 
-这个光线函数基于y坐标线性混合白色和蓝色。一开始我得到了（-1，1）范围内的单位向量，之后我缩放到（0，1）范围内。当t=1时我希望是蓝色，t=0是白色，中间则是混合。这形成了“线性混合”或者“线性插值”，或者简单的说“插值”（lerp）。插值的形式：`blended_value = (1 - t) * start_value + t * end_value`，t从0-1。我们的例子里结果是：
+这个光线函数基于y坐标线性混合白色和蓝色。一开始我得到了（-1，1）范围内的单位向量，之后我缩放到（0，1）范围内。当t=1时我希望是蓝色，t=0是白色，中间则是混合。这形成了`线性混合`或者`线性插值`，或者简单的说`插值（lerp）`。插值的形式：`blended_value = (1 - t) * start_value + t * end_value`，t的取值范围是（0，1）。我们的例子里结果是：
 
 ![022-preview01.png](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1805/022-preview01.png)
 
@@ -118,8 +118,8 @@ int main()
 
 PS：之前在CSDN上下载的版本这里居然是
 `t∗t∗dot(B,B)	+	2∗t∗dot(A−C,A−C)	+	dot(C,C)	−	R∗R	=	0`  
-感觉这个等式是错的，推算了一下应该是（看了参考网站的版本，确实是错的。。。）
-PS：后来找了作者官方发布的PDF，确实之前二手论坛（CSDN）下的是错误的版本...千万别看盗版书啊Orz
+感觉这个等式是错的，推算了一下应该是（看了参考网站的版本，确实是错的。。。）  
+PSS：后来找了作者官方发布的PDF，确实之前二手论坛（CSDN）下的是错误的版本...千万别看盗版书啊Orz
 	
 向量和R都是已知数，t是未知数，方程是二次的，就像你在高中的时候学到的那些。你可以解出t来，根据平方根的正负零值，可能会有两个实数解，一个实数解和零个实数解的情况。在图形学中，代数总能直观的表现在几何中：
 

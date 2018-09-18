@@ -76,7 +76,7 @@ int main()
 于是在网上找到了一篇文章，修改了一下代码：    
 https://blog.csdn.net/libing_zeng/article/details/54412618
 
-``` Cpp
+``` Cs
 #include "stdafx.h"
 #include <iostream>
 #include <fstream> // 添加 输出到文件的库
@@ -86,12 +86,12 @@ using namespace std;
 	 
 int main()
 {
-		ofstream outfile("chapter1_output.ppm", ios_base::out); // 输出地址
-	 
-		int nx = 200;
-		int ny = 100;
-		outfile << "P3\n" << nx << " " << ny << "\n255\n"; // 输出
-		<…>
+    ofstream outfile("chapter1_output.ppm", ios_base::out); // 输出地址
+
+    int nx = 200;
+    int ny = 100;
+    outfile << "P3\n" << nx << " " << ny << "\n255\n"; // 输出
+    <…>
 }
 ```
 
@@ -99,7 +99,7 @@ int main()
 几乎所有的图形程序都会使用一些类来存储几何向量和颜色。在许多系统中这些向量是4D的（几何的3D加上齐次坐标，颜色的话RGB的加上透明通道）。对于我们来说，3个坐标就够了，所以我们用vec3来存储颜色，位置，方向，偏移等几乎所有的东西。也许有些人不喜欢这样，因为这不会阻止你做一些蠢事，像在位置坐标加上颜色。这很有道理，但我们这里采取“最少代码”原则，只要不是错的太离谱。
 
 下面是vec3类的第一部分：   
-```Cpp
+```Cs
 #ifndef VEC3H
 #define VEC3H
  
@@ -144,7 +144,7 @@ public:
 
 我在这用了float类型，不过在其他的光线追踪器中也用double类型。并不存在正确与否——顺从你自己的品味就行。这些都是写在头文件中，接下来我们要写一些向量运算：
 
-```Cpp
+```Cs
 inline vec3 operator+(const vec3 &v1, const vec3 &v2)
 {
     return vec3(v1.e[0] + v2.e[0], v1.e[1] + v2.e[1], v1.e[2] + v2.e[2]);
@@ -162,7 +162,7 @@ inline vec3 operator*(const vec3 &v1, const vec3 &v2)
  
 inline vec3 operator/(const vec3 &v1, const vec3 &v2)
 {
-		return vec3(v1.e[0] / v2.e[0], v1.e[1] / v2.e[1], v1.e[2] / v2.e[2]);
+    return vec3(v1.e[0] / v2.e[0], v1.e[1] / v2.e[1], v1.e[2] / v2.e[2]);
 }
 ```
 
@@ -170,7 +170,7 @@ inline vec3 operator/(const vec3 &v1, const vec3 &v2)
 
 `/`和`*`运算符是给颜色计算时使用的，你不太会想用在类似于坐标的运算中。同样，我们也有一些为几何准备的运算符：
 
-```Cpp
+```Cs
 inline float dot(const vec3 &v1, const vec3 &v2)
 {
     return v1.e[0] * v2.e[0] + v1.e[1] * v2.e[1] + v1.e[2] * v2.e[2];
@@ -187,7 +187,7 @@ inline vec3 cross(const vec3 &v1, const vec3 &v2)
 #### 计算单位向量
 
 还有计算出和输入向量方向一致的单位向量：
-```Cpp
+```Cs
 // 似乎原文没有添加向量和浮点数的乘除法计算，计算单位向量时会报错
 inline vec3 operator*(float t, const vec3 &v) 
 {
@@ -209,18 +209,18 @@ inline vec3 unit_vector(vec3 v)
 
 现在我们可以改改main中的代码，使用我们刚写的vec3类：
 
-```Cpp
+```Cs
 #include "stdafx.h"
 #include <iostream>
 #include "vec3.h"
  
 int main()
 {
-		int nx = 200;
-		int ny = 100;
-		std::cout << "P3\n" << nx << " " << ny << "\n255\n";
-		for (int i = ny - 1; i >= 0; i--)
-		{
+    int nx = 200;
+    int ny = 100;
+    std::cout << "P3\n" << nx << " " << ny << "\n255\n";
+    for (int i = ny - 1; i >= 0; i--)
+    {
         for (int j = 0; j < nx; j++)
         { 
             // chapter 2
@@ -228,11 +228,11 @@ int main()
             int ir = int(255.99 * col[0]);
             int ig = int(255.99 * col[1]);
             int ib = int(255.99 * col[2]);
-       
+
             std::cout << ir << " " << ig << " " << ib << "\n";
         }
-		}
-	  return 0;
+    }
+    return 0;
 }
 ```
 
@@ -240,12 +240,12 @@ int main()
 Vec3类的文件要放在哪个文件里，也是一个问题，
 根据参考博客，类的定义都放在头文件中：
 
--| 非模板类型(none-template) |	模板类型(template)
--|--------------|--------------
+--| 非模板类型(none-template) |	模板类型(template)
+--|------------------------------------|--------
 头文件(.h) |	全局变量申明（带`extern`限定符）<br>全局函数的申明<br>带inline限定符的全局函数的定义|	带`inline`限定符的全局模板函数的申明和定义
--|	类的定义<br>类函数成员和数据成员的申明（在类内部）<br>类定义内的函数定义（相当于`inline`）<br>带`static` `const`限定符的数据成员在类内部的初始化<br> 带`inline`限定符的类定义外的函数定义|	模板类的定义<br>模板类成员的申明和定义（定义可以放在类内或者类外，类外不需要写`inline`）
+--|	类的定义<br>类函数成员和数据成员的申明（在类内部）<br>类定义内的函数定义（相当于`inline`）<br>带`static` `const`限定符的数据成员在类内部的初始化<br> 带`inline`限定符的类定义外的函数定义|	模板类的定义<br>模板类成员的申明和定义（定义可以放在类内或者类外，类外不需要写`inline`）
 实现文件(.cpp) |	全局变量的定义（及初始化）<br>全局函数的定义|	(无)
--|	类函数成员的定义<br>类带`static`限定符的数据成员的初始化
+--|	类函数成员的定义<br>类带`static`限定符的数据成员的初始化
 
 未完待续。
 
