@@ -37,10 +37,10 @@ tags:
 ## 导入Unity
 
 导入Unity后发现一个问题，这图是一整块啊，并没有把SVG中的图层，编组或者形状信息保留下来...研究了一下，发现也有人问过了这个问题，官网说之后可能会加这个功能，反正现在还没有。找了一下其他的方案，本来想在资源导入的后处理中把SVG按照形状拆开的，但是怎么都不能按我想要的存成「预制体」-「形状A-形状B-...」的结构，还能保存下VectorSprite。
-nickfourtimes说解决了这个问题，也提供了代码，然而运行报错（也可能是哪里没有调整好...）：["nickfourtimes:https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-5#post-3621448"](https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-5#post-3621448)
+nickfourtimes说解决了这个问题，也提供了代码，然而运行报错（也可能是哪里没有调整好...）：[nickfourtimes:https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-5#post-3621448](https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-5#post-3621448)
 
 另一个看似可行的方案是直接保存成整块，然后运行时加载成单独的形状，其实这个方案比前面一个更好些，也确实可以在运行时生成并分割成小块，但是后面的按形状生成点击区域却完成不了了...
-["rab:https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-5#post-3621448"](https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-5#post-3621448)
+[rab:https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-5#post-3621448](https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-5#post-3621448)
 
 看起来在Unity中处理的尝试失败了，难道就这样放弃了吗？当然不，既然不能在Unity中处理，那就在外面直接处理生成的SVG文件好了。用VSCode打开看了下SVG文件，发现是用XML存储的信息，那就简单了，直接写一个Python脚本来处理好了。
 
@@ -97,6 +97,8 @@ for counter in range(len(listofgroup)):
 
 为了交互，需要生成碰撞区域，勾选上导入设置中的 `Generate Physics Shape`，在 `SVGImporter.cs` 中 `OnImportAsset` 方法的最后加上下面的代码：
 
+![设置导入选项](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1906/190608-importSetting.jpg)
+
 ```csharp
 if (true)
 {
@@ -126,14 +128,14 @@ if (true)
 }
 ```
 
-["代码来自论坛的 Seb-1814：https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-9"](https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-9)   
+[代码来自论坛的 Seb-1814：https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-9](https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-9)   
 
 下面的图可以看出通过代码在后处理中生成的collider更加接近我们的需求（因为都是简单的闭合形状）。
-![论坛的图](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1906/190608-baseImage-ai.jpg)
+![论坛的图](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1906/190608-generateCollider.png)
 
 ## Demo
 
-剩下的就基本没有什么问题了，基本上写两个交互脚本就是一个简单的Demo。["Github地址"](https://forum.unity.com/threads/vector-graphics-preview-package.529845/page-9) 
+剩下的就基本没有什么问题了，基本上写两个交互脚本就是一个简单的Demo。["Github地址"](https://github.com/XJoshua/PaintbookDemo-Unity) 
 
 ![Demo](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1906/190608-Paintbook.gif)
 
