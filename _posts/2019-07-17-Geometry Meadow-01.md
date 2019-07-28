@@ -36,7 +36,7 @@ tags:
 
 绘制草的方法也有很多种，考虑到参考图的花也是低多边形的，参考塞尔达中的草，在风格化的场景中，用四个点/两个三角面已经效果不错了，（而且这样就不用在单根草上通过减少顶点来做LOD）：
 
-![荒野之息中的近景草，烧过变黑很明显看出是两个三角形的Quad](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1907/BOTW.png)
+![荒野之息中的近景草，烧过变黑很明显看出是两个三角形的Quad](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1907/BOTW01.png)
 
 当然还要通过摄像机射线来得到 billboard 效果：
 
