@@ -4,7 +4,7 @@ title:      "Geometry Meadow 02: Terrain And Wind"
 subtitle:   "几何着色器花海 02：地形和风"
 date:       2019-07-23 20:13:00
 author:     "Xjoshua"
-header-img: "img/1907/Meadow02_Title.jpg"
+header-img: "img/in-post/1907/Meadow02_Title.jpg"
 catalog: 	true
 tags:
   - Shader
@@ -111,8 +111,8 @@ void geom(point vertIn p[1], inout TriangleStream<geomOut> triStream)
 这篇就到这里，加上地形和风之后草甸的基本形态已经有了，下篇讲交互和阴影。
 
 #### 关联笔记
-1. [几何着色器花海 01：绘制花](https://xjoshua.github.io/2019/07/17/Geometry_Meadow_01/) 
-2. [几何着色器花海 03：交互和阴影](https://xjoshua.github.io/2019/07/27/Geometry_Meadow_03/)
+1. [几何着色器花海 01：绘制花](https://xjoshua.github.io/2019/07/17/Geometry-Meadow-01/) 
+2. [几何着色器花海 03：交互和阴影](https://xjoshua.github.io/2019/07/27/Geometry-Meadow-03/)
 
 ##### 参考资料：
 

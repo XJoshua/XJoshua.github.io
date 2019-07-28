@@ -4,7 +4,7 @@ title:      "Geometry Meadow 01: Draw Flowers"
 subtitle:   "几何着色器花海 01：绘制花"
 date:       2019-07-17 21:46:00
 author:     "Xjoshua"
-header-img: "img/1907/Meadow01_Title.jpg"
+header-img: "img/in-post/1907/Meadow01_Title.jpg"
 catalog: 	true
 tags:
   - Shader
@@ -14,7 +14,7 @@ tags:
 
 最近在ArtStation看到这样一张图，感觉很不错：
 
-![https://www.artstation.com/artwork/aRdBw9](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1907/BaseImage.png)
+![https://www.artstation.com/artwork/aRdBw9](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1907/BaseImage.jpg)
 
 正好看到了一些关于几何着色器生成草地的文章，所以就想能不能用几何着色器来做个花海（Meadow：野花草甸）。
 
@@ -258,8 +258,8 @@ void geom(point vertIn p[1], inout TriangleStream<geomOut> triStream)
 这篇就到这里，主要是顶点和三角面的生成，下篇讲地形生成和风影响的顶点动画。
 
 #### 关联笔记
-1. [几何着色器花海 02：地形和风](https://xjoshua.github.io/2019/07/23/Geometry_Meadow_02/) 
-2. [几何着色器花海 03：交互和阴影](https://xjoshua.github.io/2019/07/27/Geometry_Meadow_03/)
+1. [几何着色器花海 02：地形和风](https://xjoshua.github.io/2019/07/23/Geometry-Meadow-02/) 
+2. [几何着色器花海 03：交互和阴影](https://xjoshua.github.io/2019/07/27/Geometry-Meadow-03/)
 
 ##### 参考资料：
 

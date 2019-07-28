@@ -4,7 +4,7 @@ title:      "Geometry Meadow 03: Interaction And Shadow"
 subtitle:   "几何着色器花海 03：交互和阴影"
 date:       2019-07-27 20:26:00
 author:     "Xjoshua"
-header-img: "img/1907/Meadow03_Title.jpg"
+header-img: "img/in-post/1907/Meadow03_Title.jpg"
 catalog: 	true
 tags:
   - Shader
@@ -87,8 +87,8 @@ void geom(point vertIn p[1], inout TriangleStream<geomOut> triStream)
 ["Github地址"](https://roystan.net/articles/grass-shader.html)
 
 #### 关联笔记
-1. [几何着色器花海 01：绘制花](https://xjoshua.github.io/2019/07/17/Geometry_Meadow_01/) 
-2. [几何着色器花海 02：地形和风](https://xjoshua.github.io/2019/07/23/Geometry_Meadow_02/) 
+1. [几何着色器花海 01：绘制花](https://xjoshua.github.io/2019/07/17/Geometry-Meadow-01/) 
+2. [几何着色器花海 02：地形和风](https://xjoshua.github.io/2019/07/23/Geometry-Meadow-02/) 
 
 ##### 参考资料：
 
