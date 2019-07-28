@@ -55,7 +55,7 @@ void geom(point vertIn p[1], inout TriangleStream<geomOut> triStream)
 }
 ```
 
-![草交互](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1907/Grass-Move1.gif)
+![草交互](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1907/Grass-Move01.gif)
 
 ## 阴影
 
@@ -76,6 +76,12 @@ void geom(point vertIn p[1], inout TriangleStream<geomOut> triStream)
 具体代码可以看下Github中的项目，就不在这里贴出来了。
 
 ![阴影效果](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1907/Grass-Shadow02.jpg)
+
+## LOD（划掉）
+
+之前已经提到过，既然每个草只有四个点，在单个草上减点做LOD就没有必要了。而且根据对荒野之息的研究（见参考资料5），这种草只会在玩家的周围出现，远一点的地方就是包含很多的草（或者花）的面片。荒野之息的过渡做的非常自然，本来草的颜色和地面就非常接近，不仔细看不太容易发现近景草和中景草的分界。
+
+那么这种LOD就要结合大地形来做了，不过那就是另一个故事了。
 
 ## 小结
 至此几何着色器草甸篇章就结束了，也没有什么新的内容，主要是对学习几何着色器过程的一个记录。当然据说几何着色器的性能并不好，不能在移动端使用，不过这就是另外的问题了。
