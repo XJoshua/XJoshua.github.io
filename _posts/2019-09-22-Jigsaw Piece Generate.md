@@ -4,7 +4,7 @@ title:      "Jigsaw Piece Generate"
 subtitle:   "随机拼图生成"
 date:       2019-09-22 20:00:00
 author:     "Xjoshua"
-header-img: "img/in-post/1909/step03.png"
+header-img: "img/in-post/1909/step03.jpg"
 catalog: 	true
 tags:
   - Shader
@@ -98,9 +98,9 @@ Shader：
 
 然后我们就能得到切分成了9份的原始图片。
 
-![step01](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1909/step01.png)
+![step01](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1909/step01.jpg)
 
-随机边界
+## 随机边界
 边界一开始的想法是用曲线来做，比如说样条曲线，随机四个或者六个控制点的位置，来控制整个曲线。研究了一会 NURBS 曲线（非均匀有理B样条，说出来就感觉很厉害）之后，还是放弃了这个方案。并不是说这个方案不行（这个链接中有使用曲线来生成拼图的边界：http://bl.ocks.org/nevernormal1/f808cffb897c63a8dd4e）。考虑到还需要判断点是否在曲线内部，以及后续的光影，还是把这个工作交给了美术来做。
 
 三种类型的边界：边缘的平边，凸出的和凹陷的。这里只做了向上的方向，其他方向在shader中采样的时候乘一个旋转矩阵就好了。
@@ -184,9 +184,9 @@ fixed4 GetPieceShape(float edgeType, float edgeAlpha, float2 direction)
 ```
 
 得到生成的拼图：
-![step02](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1909/step02.png)
+![step02](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1909/step02.jpg)
 
-光影
+## 光影
 现在已经得到基本的形状了，如果加上简单的描边，就和前两个参考的效果类似。加上光影其实也比较简单，主要是在美术上需要有一样工作量，把斜面的光照效果画到边缘图的gb通道上，然后把光照添加到边缘即可。
 
 边缘图的G通道，观察边缘处的光照效果：
@@ -199,7 +199,7 @@ fixed4 GetPieceShape(float edgeType, float edgeAlpha, float2 direction)
 ```
 
 最终的效果：
-![step03](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1909/step03.png)
+![step03](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1909/step03.jpg)
 
 当然这样做的问题是无论块如果旋转，光照都是一样的。。。
 
