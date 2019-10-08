@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      "Simple Title Editor"
+title:      "Simple Tile Editor"
 subtitle:   "简易 Title 地图编辑器"
 date:       2018-10-21 20:37:00
 author:     "Xjoshua"
