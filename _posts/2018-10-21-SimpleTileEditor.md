@@ -15,6 +15,8 @@ tags:
 
 地图是基于方形网格的，2D或者3D倒是无所谓。六边形网格的话需要进行一些修改。
 
+![preview03](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1810/preview03.gif)
+
 ## 光标和范围
 
 首先是在地图的范围内绘制出光标的位置，当然其实不画也没什么关系。。。总之方便观察。
