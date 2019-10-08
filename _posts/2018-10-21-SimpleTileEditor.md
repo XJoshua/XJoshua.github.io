@@ -4,7 +4,7 @@ title:      "Simple Title Editor"
 subtitle:   "简易 Title 地图编辑器"
 date:       2018-10-21 20:37:00
 author:     "Xjoshua"
-header-img: "img/post-bg-default.jpg"
+header-img: "img/in-post/1810/title.png"
 catalog: 	true
 tags:
   - Unity
@@ -63,11 +63,11 @@ public class MyTileLayerEditor : Editor
 
 需要注意的是在鼠标移动后需要调用 Event.current.Use() ，不然等鼠标停下才会更新绘制。。。文档里这个函数的介绍有点敷衍，不是很明白为什么。
 
+![01](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1810/01.png)
 
+这时在 editor 中选中挂上代码的物体，然后在 scene 窗口中可以看到跟随鼠标移动的红色十字参考线。
 
-这时在editor中选中挂上代码的物体，然后在scene窗口中可以看到跟随鼠标移动的红色十字参考线。
-
-当然我们的关卡是基于tile的，所以光标的移动也应该在坐标点上：
+当然我们的关卡是基于 tile 的，所以光标的移动也应该在坐标点上：
 
 ``` Csharp
 public Vector3 GetGridPos(Vector3 pos)
@@ -166,7 +166,7 @@ public class MyTileLayerEditor : Editor
 
 获取鼠标的位置之后，选择需要绘制的块，然后绘制到光标的位置上。
 
-为了方便演示，在SketchUp里做了几个块导入到Unity中：
+为了方便演示，在 SketchUp 里做了几个块导入到 Unity 中：
 
 ![02](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1810/02.png)
 
@@ -198,13 +198,13 @@ for (int i = 0; i < palette.Count; i++)
 }
 ```
 
-可以设置 palette 的属性 `pal.hideFlags = HideFlags.HideInHierarchy` ，这样就不会在scene窗口中看见这个物体的碰撞盒，hierarchy 中也会隐藏。
+可以设置 palette 的属性 `pal.hideFlags = HideFlags.HideInHierarchy` ，这样就不会在 scene 窗口中看见这个物体的碰撞盒，hierarchy 中也会隐藏。
 
 ![03](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1810/03.png)
 
 按住S键点击采样模板块，点击和拖动则绘制模板块，
 
-Editor代码中加上下面代码，在 OnSceneGUI() 中执行：
+Editor 代码中加上下面代码，在 OnSceneGUI() 中执行：
 
 ``` Csharp
 public void ProcessEvents()
@@ -325,16 +325,18 @@ public void Drag(Vector3 mouse, MyTileLayerEditor.TileOperation op)
 ![preview03](https://raw.githubusercontent.com/XJoshua/XJoshua.github.io/master/img/in-post/1810/preview03.gif)
 
 参考代码来自下方链接中的下载文件，感谢作者：
-![unity-wave-function-collapse](https://selfsame.itch.io/unitywfc)
+[unity-wave-function-collapse](https://selfsame.itch.io/unitywfc)
+[github地址](https://github.com/selfsame/unity-wave-function-collapse/blob/master/TilePainter.cs)
+
 
 ## 后续
 
-之后就可以把绘制好的地图保存成json之类的数据文件，对应的也可以加上读取和修改功能。
+之后就可以把绘制好的地图保存成 json 之类的数据文件，对应的也可以加上读取和修改功能。
 
 当然那就是另外一个故事了，这篇文章讲解简单的关卡编辑器的目的已经达到了。
 
 ## 参考资料
 
-- 1. ![unity-wave-function-collapse](https://selfsame.itch.io/unitywfc)
-- 2. ![riptutorial-editor](https://riptutorial.com/unity3d/example/14519/editor-window) 下面有个MapEditor，还挺不错的，好像是个插件来着
+- 1. [unity-wave-function-collapse](https://selfsame.itch.io/unitywfc)
+- 2. [riptutorial-editor](https://riptutorial.com/unity3d/example/14519/editor-window) 下面有个 MapEditor Sample，还挺不错的，好像是个插件来着
 
